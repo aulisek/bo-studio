@@ -1,8 +1,6 @@
 import streamlit as st
 
-# App Title
-st.markdown("<h1 style='color:#2c3e50; font-size: 42px;'>🧪 BO Studio</h1>", unsafe_allow_html=True)
-st.subheader("Bayesian Optimization Made Simple")
+st.image("image3.png",  width=900)
 
 # Horizontal line
 st.markdown("---")
