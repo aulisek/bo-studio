@@ -26,6 +26,8 @@ st.info("“A clear and simple environment for exploring Bayesian Optimization �
 # Spacer
 st.markdown("")
 
+st.markdown("💬 Have suggestions or found a bug? [Click here to give feedback](https://docs.google.com/forms/d/e/1FAIpQLSeVOxjUAOUZJ4T4fqF6i2Vuq7n854onoZAE7pFxSzPg9d_6lQ/viewform?usp=dialog)")
+
 # Layout: Two columns
 col1, col2 = st.columns([1, 2])
 
