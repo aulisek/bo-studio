@@ -38,6 +38,8 @@ if resume_file != "None" and st.sidebar.button("Load Previous Manual Campaign"):
     st.session_state.response = metadata.get("response", "Yield")
     st.session_state.manual_initialized = True
     st.session_state.initial_results_submitted = True
+    st.session_state.experiment_name = metadata.get("experiment_name", "")
+    st.session_state.experiment_notes = metadata.get("experiment_notes", "")
 
     # Use the restored response variable
     response = st.session_state.response
@@ -200,7 +202,9 @@ if st.sidebar.button("💾 Save Campaign"):
         "iteration": st.session_state.get("iteration", len(df)),
         "n_init": st.session_state.n_init,
         "total_iters": st.session_state.total_iters,
-        "response": st.session_state.response
+        "response": st.session_state.response,
+        "experiment_name": experiment_name,
+        "experiment_notes": experiment_notes
     }
     with open(os.path.join(run_path, "metadata.json"), "w") as f:
         json.dump(metadata, f, indent=4)
