@@ -36,6 +36,15 @@ if resume_file != "None" and st.sidebar.button("Load Previous Manual Campaign"):
     st.session_state.n_init = metadata.get("n_init", 1)
     st.session_state.total_iters = metadata.get("total_iters", 1)
     st.session_state.response = metadata.get("response", "Yield")
+    # Ensure response column exists in loaded data
+    df_columns = df.columns.tolist()
+    if st.session_state.response not in df_columns:
+        # Try to find a valid response column
+        possible_responses = ["Yield", "Conversion", "Transformation", "Productivity"]
+        for col in possible_responses:
+            if col in df_columns:
+                st.session_state.response = col
+                break
     st.session_state.manual_initialized = True
     st.session_state.initial_results_submitted = True
     st.session_state.experiment_name = metadata.get("experiment_name", "")
