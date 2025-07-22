@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bo-studio
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py
+    envVars:
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: true
+    disk:
+      name: experiment-db
+      mountPath: /mnt/data
+      sizeGB: 1
