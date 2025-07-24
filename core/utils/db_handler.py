@@ -4,7 +4,7 @@ import json
 import pandas as pd
 from datetime import datetime
 
-DB_NAME = "/mnt/data/experiments.db"
+DB_NAME = "experiments.db"
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
